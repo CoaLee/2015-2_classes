@@ -1,0 +1,4 @@
+break getbufn
+break *0x08048e57
+break launch
+break launcher

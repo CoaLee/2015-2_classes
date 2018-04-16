@@ -1,0 +1,14 @@
+let crazy2add ((c1:crazy2), (c2:crazy2)) :crazy2 =
+ (let rec int2crazy2 (i:int) :crazy2 = 
+  (let q, r = i / 2, i mod 2 in
+    if q = 0 then (match r with -1 -> MONE NIL | 1 -> ONE NIL | _ -> ZERO NIL)
+	else let n = int2crazy2 q in (match r with -1 -> MONE n | 1 -> ONE n | _ -> ZERO n))
+  in
+  let rec crazy2val (c :crazy2) :int = 
+	(match c with
+	  NIL -> 0
+	| ZERO next -> 2 * (crazy2val next)
+	| ONE next -> 1 + 2 * (crazy2val next)
+	| MONE next -> -1 + 2 * (crazy2val next))
+  in
+  int2crazy2 ((crazy2val c1)+(crazy2val c2)))

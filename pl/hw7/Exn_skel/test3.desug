@@ -1,0 +1,92 @@
+== Converted Progra ==
+(fn y => 
+  (fn x => 
+    (fn x => 
+      if (x = 5) then 
+			  (fn x => 
+				  if (x = 33) then 
+					  y 
+				  else 
+					  (fn x => 201511) 
+						(x)
+				) (x) 
+			else 
+			  (fn x => 
+				  if (x = 33) then 
+					  y 
+				  else 
+					  (fn x => 201511) (x)
+				) (x)
+		) (5)
+	) (33)
+) (44) 
+	
+== Running input program with xexp Interpreter ==
+44 
+[Valid] Exception sugar removed successfully 
+== Running converted program with xexp Interpreter ==
+201511
+
+== Converted Program ==
+(fn y => 
+  (fn x => 
+    (fn x => 
+      if (x = 5) then 
+			  (fn x => 
+				  if (x = 33) then 
+					  y 
+				  else 
+					  (fn x => 201511) 
+						(5)
+				) (5) 
+			else 
+			  (fn x => 
+				  if (x = 33) then 
+					  y 
+				  else 
+					  (fn x => 201511) 
+						(5)
+				) (5)
+		) (5)
+	) (33)
+) (44) 
+
+(fn x => 
+	(fn x => 
+		if (x = 5) then 
+			(fn x => 
+				if (x = 33) then 
+					44 
+				else 
+					(fn x => 201511) 
+					(x)
+			) (x) 
+		else 
+			(fn x => 
+				if (x = 33) then 
+					44 
+				else 
+					(fn x => 201511) 
+					(x)
+			) (x)
+	) (5)
+) (33)
+
+(fn x => 
+	if (x = 5) then 
+		(fn x => 
+			if (x = 33) then 
+				44 
+			else 
+				(fn x => 201511) 
+				(x)
+		) (x) 
+	else 
+		(fn x => 
+			if (x = 33) then 
+				44 
+			else 
+				(fn x => 201511) 
+				(x)
+		) (x)
+) (5)

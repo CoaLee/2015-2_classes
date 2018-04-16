@@ -1,0 +1,10 @@
+-Student No.: 2010-13419
+-Name:        Lee, Yong Jae
+
+-How to.	
+  $ java -classpath ./PA_01_2010-13419.jar Main
+
+Available commands are submit, size, get_top, get_bottom, view_top, view_bottom.
+Those are implemented as described in the document.
+
+If you put any other character(s), it will return with printing "End of job today! Going home...".

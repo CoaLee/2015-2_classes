@@ -1,0 +1,23 @@
+CFLAGS=-Wall
+
+PROG=list
+
+.phony: client server $(PROG).h
+.precious: $(PROG)_clnt.c $(PROG)_svc.c $(PROG)_xdr.c
+
+default: client server
+
+$(PROG).h: $(PROG).x
+	rpcgen $<
+
+%.o: %.c
+	$(CC) $(CLFAGS) -c -o $@ $<
+
+client: $(PROG).h $(PROG)_client.o $(PROG)_clnt.o $(PROG)_xdr.o
+	$(CC) $(CFLAGS) -o $@ $(PROG)_client.o $(PROG)_clnt.o $(PROG)_xdr.o
+
+server: $(PROG).h $(PROG)_server.o $(PROG)_svc.o $(PROG)_xdr.o
+	$(CC) $(CFLAGS) -o $@ $(PROG)_server.o $(PROG)_svc.o $(PROG)_xdr.o
+
+clean:
+	rm -f client server *.o $(PROG).h $(PROG)_svc.c $(PROG)_clnt.c $(PROG)_xdr.c

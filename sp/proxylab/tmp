@@ -1,0 +1,9 @@
+typedef struct { 
+  int server_ip; 
+  int server_port; 
+  struct hostent *client_hp; 
+  int client_connfd; 
+  char *client_haddrp; 
+  int client_port; 
+  char *message; 
+} connStruct; 

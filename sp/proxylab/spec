@@ -1,0 +1,45 @@
+ < Specification [12/10] >
+
+[echoclient]
+
+- execution : it requires <proxyserver host ip> & <proxyserver host port num>
+
+e.g. ) ./echoclient localhost 1522
+
+[proxy server]
+
+- execution : it requires <port num which want to open>
+
+e.g. ) ./proxy 1522
+
+- process : it takes 3 entries from echoclient ; <server host ip> <server host port num> <message>.
+
+[echoserver]
+
+- execution : it requires <port num which want to open>
+
+e.g. ) ./echoserver 12345
+
+[Entire Process Example]
+
+(Assume that all binaries are ready)
+
+$ ./echoserver 12345 &             <------------ background execution
+
+$ ./proxy 1522 &                      <------------ background execution
+
+$ ./echoclient localhost 1522    <------------ foreground execution
+
+type:blah blah         <------------ means nothing
+
+echo:proxy usage: <host> <port> <message>
+
+type:localhost 12345 hello world
+
+echo:HELLO WORLD
+
+type:^C             <------------ Ctrl + C (SIGINT)
+
+$ cat proxy.log
+
+Mon 1 Jun 2014 11:5:33 KST: 127.0.0.1 52067 12 HELLO WORLD 

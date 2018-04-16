@@ -1,0 +1,12 @@
+00 00 00 00
+00 00 00 00
+00 00 00 00
+00 00 00 00
+00 00 
+c3 /* ret */ 
+68 4c 8d 04 08 /* push 0x8048d4c */ 
+a3 e4 c0 04 08 /* mov %eax, 0x804c0e4=global_value */ 
+8b 44 24 0c /* mov 0xc(%esp), %eax */ 
+c7 44 24 0c 0d fc 3b 57 /* movl $0x573bfc0d, 0xc(%esp) */ 
+83 ec 10 /* sub $0x10, %esp */ 
+44 3b 68 55

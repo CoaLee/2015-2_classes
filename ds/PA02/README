@@ -1,0 +1,8 @@
+#Student No.
+2010-13419
+
+#Name
+Lee, Yong Jae
+
+#How to execute
+java -classpath PA_02_2010-13419.jar ds.test.Main

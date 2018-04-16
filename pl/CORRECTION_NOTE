@@ -1,0 +1,10 @@
+					<hw2>
+#hw2_5.ml:
+-line 21&22: ... -> ... 'eVal e3 value'  ==>>  ... -> ... 'e3'
+
+					<hw1>
+#hw1_1.ml: need to check why this yielded a compile error.
+#hw1_4.ml: I didn't contain the type definition.
+#hw1_5.ml: same as hw1_4.ml.
+
+
